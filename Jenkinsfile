@@ -14,7 +14,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = '4ddCH1tT1tUpWsmgHLFs41CNEyXQZw4F+gkqHedy'
 }
 
-    }
+    
 
     stages {
         stage('Build Docker Image') {
