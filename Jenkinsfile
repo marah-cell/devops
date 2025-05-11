@@ -47,6 +47,7 @@ pipeline {
                 script {
                     sh """
                     ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${EC2_USER}@${EC2_IP} '
+                       aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REPO} &&
                         docker pull ${ECR_REPO}:${DOCKER_TAG} &&
                         docker stop ${CONTAINER_NAME} || true &&
                         docker rm ${CONTAINER_NAME} || true &&
