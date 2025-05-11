@@ -7,7 +7,7 @@ pipeline {
         ECR_REPO = '597088020988.dkr.ecr.us-east-1.amazonaws.com/dev'
         AWS_REGION = 'us-east-1'
         EC2_USER = 'ec2-user'
-        EC2_IP = '54.90.133.120'
+        EC2_IP = '54.167.77.201'
         SSH_KEY_PATH = '/var/jenkins_home/.ssh/p.pem'
         CONTAINER_NAME = 'backend-app'
         AWS_ACCESS_KEY_ID = 'AKIAYWBJYFH6GJRLQHW5'
