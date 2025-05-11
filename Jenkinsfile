@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'devops-pro_backend'
+        DOCKER_IMAGE = 'devops-pro_backend' //name of dockerfile image that i've built!i can use any name!
         DOCKER_TAG = 'latest'
         ECR_REPO = '597088020988.dkr.ecr.us-east-1.amazonaws.com/dev'
         AWS_REGION = 'us-east-1'
