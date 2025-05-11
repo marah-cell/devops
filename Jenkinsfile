@@ -8,7 +8,7 @@ pipeline {
         AWS_REGION = 'us-east-1'
         EC2_USER = 'ec2-user'
         EC2_IP = '54.90.133.120'
-        SSH_KEY_PATH = '/home/memo/.ssh/p.pem'
+        SSH_KEY_PATH = '/var/jenkins_home/.ssh/p.pem'
         CONTAINER_NAME = 'backend-app'
         AWS_ACCESS_KEY_ID = 'AKIAYWBJYFH6GJRLQHW5'
         AWS_SECRET_ACCESS_KEY = '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'
