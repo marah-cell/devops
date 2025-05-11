@@ -4,11 +4,11 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'devops-pro_backend'
         DOCKER_TAG = 'latest'
-        ECR_REPO = '597088020988.dkr.ecr.us-east-1.amazonaws.com/devops-pro-backend'
+        ECR_REPO = '597088020988.dkr.ecr.us-east-1.amazonaws.com/dev'
         AWS_REGION = 'us-east-1'
         EC2_USER = 'ec2-user'
-        EC2_IP = 'your-ec2-public-ip'        
-        SSH_KEY_PATH = '/path/to/your/key.pem' 
+        EC2_IP = '54.90.133.120'
+        SSH_KEY_PATH = '/home/memo/.ssh/p.pem'
         CONTAINER_NAME = 'backend-app'
     }
 
@@ -16,7 +16,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}") //Jenkins builds a Docker image from the application's Dockerfile
+                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Login to ECR') {
             steps {
                 script {
-                    sh "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REPO}"
+                    sh "aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin 597088020988.dkr.ecr.us-east-1.amazonaws.com"
                 }
             }
         }
