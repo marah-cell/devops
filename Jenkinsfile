@@ -51,8 +51,8 @@ pipeline {
                       export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} &&
                        aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REPO} &&
                         docker pull ${ECR_REPO}:${DOCKER_TAG} &&
-                        docker ps -q --filter "name=${CONTAINER_NAME}" | grep -q . && docker stop ${CONTAINER_NAME} || true &&
-                        docker ps -a -q --filter "name=${CONTAINER_NAME}" | grep -q . && docker rm ${CONTAINER_NAME} || true &&
+                        docker stop $(docker ps -q --filter "name=${CONTAINER_NAME}") || true
+                        docker rm $(docker ps -q --filter "name=${CONTAINER_NAME}") || true
                         docker run -d --name ${CONTAINER_NAME} -p 80:3000 ${ECR_REPO}:${DOCKER_TAG}
                     '
                     """
