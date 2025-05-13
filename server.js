@@ -10,11 +10,11 @@ mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('✅ marooh Connected to MongoDB'))
+.then(() => console.log('✅ Connected to MongoDB'))
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
 app.get('/', (req, res) => {
-  res.send('🚀 Hello from Node.js with MongoDB!');
+  res.send('🚀 Hello marooh from Node.js with MongoDB!');
 });
 
 app.listen(port, () => {
